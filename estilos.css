@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    background-color: rgb(214, 253, 240);
+}
+.contenedor{
+    max-width: 700px;
+    margin: 100px auto;
+    display: flex;
+    justify-content: space-around;
+}
+.contenedor_form{
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 5%;
+    padding: 20px;
+    background-color: rgb(0, 255, 255, 0.3);
+    box-shadow: 0 0 5px 0;
+}
+.contenedor_form, .formulario, .formulario_titulo, .formulario_descripcion, textarea{
+   
+    margin: 10px 0;   
+    
+}
+
+.formulario_titulo input{
+    width: 100%;
+    padding: 5px;
+}
+textarea{
+    width: 100%;
+    resize: none;
+}
+button{
+    padding: 5px;
+    width: 100%;
+    background-color: cadetblue;
+    border: none;
+    color: azure;
+    transition: 1s all;
+}
+button:hover{
+    color: cadetblue;
+    background-color: azure;
+    transform: scale(1.1);
+}
+.vannotas{
+    width: 350px;
+    height: 130px;
+    border: 0 solid black;
+    padding: 0 5px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 0 0 5px 0;
+    
+}
+
+.vannotas input{
+    width: 30%;
+    padding: 5px;
+    border: 1px solid rgb(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: rgb(237, 114, 114);
+    color: aliceblue;
+}

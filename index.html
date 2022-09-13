@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicacion de recordatorios</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <h1>Aplicacion de Tareas</h1>
+
+
+    <div class="contenedor">
+        <div class="contenedor_form">
+            <form id="formulario">
+                <div class="formulario_titulo">
+                    <label for="titulo">Titulo:</label>
+                    <input type="text" id="titulo" placeholder="Agrega Titulo">
+                </div>
+                <div class="formulario_descripcion">
+                    <textarea name="descripcion" id="descripcion" cols="30" rows="10"
+                        placeholder="Agrega Descripcion"></textarea>
+                </div>
+                <button type="submit" id="formaulario_btn">CREAR</button>
+            </form>
+        </div>
+        <div class="contenedorNotas">
+            <div class="notas" id="mostrarNotas">
+                <div class="vannotas" id="vannotas"><p>${titulo}</p><p>${descripcion}</p>
+                    <input type="button" value="BORRAR">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
