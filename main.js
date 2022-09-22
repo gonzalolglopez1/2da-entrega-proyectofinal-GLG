@@ -19,6 +19,13 @@ function guardarTarea(e) {
         localStorage.setItem("tareas", JSON.stringify(tareas));
     }
     crearTareas();
+    Toastify({
+        text: "NOTA CREADA EXISTOSAMENTE",
+        className: "info",
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        }
+      }).showToast();
     document.getElementById("formulario").reset();
     e.preventDefault();
 }
