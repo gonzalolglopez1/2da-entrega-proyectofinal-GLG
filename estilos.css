@@ -47,15 +47,7 @@ textarea::placeholder {
 .formulario-contenedor{
     display: flex;
 }
-.contenedor_form,
-.formulario,
-.formulario_titulo,
-.formulario_descripcion,
-textarea {
 
-    /* margin: 10px 0; */
-
-}
 
 .formulario_titulo input {
     /* width:50%; */

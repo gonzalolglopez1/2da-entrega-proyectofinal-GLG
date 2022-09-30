@@ -107,3 +107,22 @@ function borrarNota(titulo) {
     crearTareas();
 }
 crearTareas();
+
+
+
+
+let contenedorNotas = document.getElementById("vannotas");
+
+fetch('notas.json')
+
+.then ((resp) => resp.json())
+.then( (data) => {
+
+    data.forEach((data) => {
+        const div = document.createElement("div");
+        div.innerHTML = `<p>${data.titulo}</p>
+                         <p>${data.descripcion}</p>
+                         <input type="button" value="BORRAR">`;
+        contenedorNotas.appendChild(div);
+    });
+})
