@@ -4,7 +4,26 @@ let titulo = document.getElementById("titulo").value;
 let descripcion = document.getElementById("descripcion").value;
 
 
+// --------------------FETCH----------------------------------
+let contenedorNotas = document.getElementById("mostrarNotas");
+let contenedorNota = document.getElementById("vannotas")
+
+fetch("notas.json") 
+
+.then (response => response.json())
+.then ( data => {
+    data.forEach(data => {
+        contenedorNota.innerHTML = `<p> ${data.titulo} </p>
+        <p> ${data.descripcion} </p>
+        <input type="button" value="BORRAR" onclick="borrarNota('${titulo}')" >`
+        contenedorNotas.append(contenedorNota)
+        
+    });
     
+})
+
+
+// ----------funcion recoger datos de inputs-----------    
     function guardarTarea(e) {
         let titulo = document.getElementById("titulo").value;
         let descripcion = document.getElementById("descripcion").value;
@@ -48,32 +67,13 @@ let descripcion = document.getElementById("descripcion").value;
         
                 crearTareas();
 
-
             }
-    
-    
-    
-    
-    
-    
-    
-    
-        
-    
-    
-    
-    
     
         document.getElementById("formulario").reset();
         e.preventDefault();
     }
 
-
-
-
-
-
-
+//-------------- funcion pasar datos recogidos al dom--------------
 function crearTareas() {
 
     let tareas = JSON.parse(localStorage.getItem("tareas"));
@@ -96,6 +96,7 @@ function crearTareas() {
 
 }
 
+//------------ funcion borrar notas---------------------------
 function borrarNota(titulo) {
     let tareas = JSON.parse(localStorage.getItem("tareas"));
     for (let i = 0; i < tareas.length; i++) {
@@ -109,20 +110,5 @@ function borrarNota(titulo) {
 crearTareas();
 
 
+// --------------------FIN DE LA APLICACION------------------------
 
-
-let contenedorNotas = document.getElementById("vannotas");
-
-fetch('notas.json')
-
-.then ((resp) => resp.json())
-.then( (data) => {
-
-    data.forEach((data) => {
-        const div = document.createElement("div");
-        div.innerHTML = `<p>${data.titulo}</p>
-                         <p>${data.descripcion}</p>
-                         <input type="button" value="BORRAR">`;
-        contenedorNotas.appendChild(div);
-    });
-})
